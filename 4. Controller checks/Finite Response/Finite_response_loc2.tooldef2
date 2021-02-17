@@ -1,0 +1,10 @@
+from "lib:cif3" import *;
+
+// Input file:
+string input_path = "Loc2/loc2.cif";
+
+
+cif3ctrlcheck(input_path,
+			  "--finiteResponseCheck=yes",
+			  "--confluenceCheck=no",
+			  "--explicit=yes");

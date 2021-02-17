@@ -1,0 +1,50 @@
+from "lib:cif3" import *;
+
+// Input files:
+string input_path1 = "loc1_nonblocking_under_control.cif";
+string input_path2 = "loc2_nonblocking_under_control.cif";
+
+// Output files:
+string output_path1 = "Loc1Supervisor.cif";
+string output_path2 = "Loc2Supervisor.cif";
+
+cif3cif(input_path1,
+    "-o", output_path1,
+    "-t elim-comp-def-inst"
+    );
+cif3cif(input_path2,
+    "-o", output_path2,
+    "-t elim-comp-def-inst"
+    );
+
+cif3cif(output_path1,
+    "-o", output_path1,
+    "-t elim-groups"
+    );
+cif3cif(output_path2,
+    "-o", output_path2,
+    "-t elim-groups"
+    );
+
+cif3cif(output_path1,
+    "-o", output_path1,
+    "-t lift-events"
+    );
+cif3cif(output_path2,
+    "-o", output_path2,
+    "-t lift-events"
+    );
+
+cif3datasynth(output_path1,
+   			 "-o", output_path1);
+cif3datasynth(output_path2,
+         "-o", output_path2);
+
+cif3cif(output_path1,
+        "-o", output_path1,
+        "-t simplify-values-optimized"
+        );
+cif3cif(output_path2,
+        "-o", output_path2,
+        "-t simplify-values-optimized"
+        );
