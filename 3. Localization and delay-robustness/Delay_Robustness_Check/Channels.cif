@@ -1,0 +1,29 @@
+import "Channel.cif";
+//plc1 to plc2
+
+//-----
+
+//plc2 to plc1
+controllable Pumpcellars_Traffictube1_c_emergency;
+controllable Pumpcellars_Traffictube1_c_recovery;
+controllable Pumpcellars_Traffictube1_c_operational;
+
+uncontrollable Pumpcellars_Traffictube1_Observer_c_emergency;
+uncontrollable Pumpcellars_Traffictube1_Observer_c_recovery;
+uncontrollable Pumpcellars_Traffictube1_Observer_c_operational;
+
+Channel1: Channel(Pumpcellars_Traffictube1_c_emergency, Pumpcellars_Traffictube1_Observer_c_emergency);
+Channel2: Channel(Pumpcellars_Traffictube1_c_recovery, Pumpcellars_Traffictube1_Observer_c_recovery);
+Channel3: Channel(Pumpcellars_Traffictube1_c_operational, Pumpcellars_Traffictube1_Observer_c_operational);
+
+controllable Pumpcellars_Traffictube2_c_emergency;
+controllable Pumpcellars_Traffictube2_c_recovery;
+controllable Pumpcellars_Traffictube2_c_operational;
+
+uncontrollable Pumpcellars_Traffictube2_Observer_c_emergency;
+uncontrollable Pumpcellars_Traffictube2_Observer_c_recovery;
+uncontrollable Pumpcellars_Traffictube2_Observer_c_operational;
+
+Channel4: Channel(Pumpcellars_Traffictube2_c_emergency,Pumpcellars_Traffictube2_Observer_c_emergency );
+Channel5: Channel(Pumpcellars_Traffictube2_c_recovery, Pumpcellars_Traffictube2_Observer_c_recovery);
+Channel6: Channel(Pumpcellars_Traffictube2_c_operational, Pumpcellars_Traffictube2_Observer_c_operational);

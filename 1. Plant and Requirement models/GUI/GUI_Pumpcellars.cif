@@ -1,0 +1,74 @@
+import "../Supervisor.cif";
+svgfile "../Pumpcellars.svg";
+
+// Traffic tube 1
+svgin id "SV1_knop_operationeel" event Pumpcellars_Traffictube1_ModeTraffictubeButtons_ButtonOperational_u_push;
+svgout id "SV1_rect_operationeel" attr "visibility" value if Pumpcellars_Traffictube1_ModeTraffictube.operational: "visible" else "hidden" end;
+
+svgin id "SV1_knop_calamiteit" event Pumpcellars_Traffictube1_ModeTraffictubeButtons_ButtonEmergency_u_push;
+svgout id "SV1_rect_calamiteit" attr "visibility" value if Pumpcellars_Traffictube1_ModeTraffictube.emergency: "visible" else "hidden" end;
+
+svgin id "SV1_knop_herstel" event Pumpcellars_Traffictube1_ModeTraffictubeButtons_ButtonRecovery_u_push;
+svgout id "SV1_rect_herstel" attr "visibility" value if Pumpcellars_Traffictube1_ModeTraffictube.recovery: "visible" else "hidden" end;
+
+
+// Traffic tube 2
+svgin id "SV2_knop_operationeel" event Pumpcellars_Traffictube2_ModeTraffictubeButtons_ButtonOperational_u_push;
+svgout id "SV2_rect_operationeel" attr "visibility" value if Pumpcellars_Traffictube2_ModeTraffictube.operational: "visible" else "hidden" end;
+
+svgin id "SV2_knop_calamiteit" event Pumpcellars_Traffictube2_ModeTraffictubeButtons_ButtonEmergency_u_push;
+svgout id "SV2_rect_calamiteit" attr "visibility" value if Pumpcellars_Traffictube2_ModeTraffictube.emergency: "visible" else "hidden" end;
+
+svgin id "SV2_knop_herstel" event Pumpcellars_Traffictube2_ModeTraffictubeButtons_ButtonRecovery_u_push;
+svgout id "SV2_rect_herstel" attr "visibility" value if Pumpcellars_Traffictube2_ModeTraffictube.recovery: "visible" else "hidden" end;
+
+
+// HeadPumpcellar 1
+svgin id "HPK1_knop_handmatig" event Pumpcellars_HeadPumpcellar1_Control_ButtonManual_u_push;
+svgout id "HPK1_rect_hand" attr "visibility" value if Pumpcellars_HeadPumpcellar1_Control_Mode.manual: "visible" else "hidden" end;
+
+svgin id "HPK1_knop_automatisch" event Pumpcellars_HeadPumpcellar1_Control_ButtonAuto_u_push;
+svgout id "HPK1_rect_auto" attr "visibility" value if Pumpcellars_HeadPumpcellar1_Control_Mode.auto: "visible" else "hidden" end;
+
+svgin id "HPK1_knop_leeghouden" event Pumpcellars_HeadPumpcellar1_Control_ButtonDrain_u_push;
+svgout id "HPK1_rect_leeghouden" attr "visibility" value if Pumpcellars_HeadPumpcellar1_Mode.drain: "visible" else "hidden" end;
+
+svgin id "HPK1_knop_bergen" event Pumpcellars_HeadPumpcellar1_Control_ButtonStore_u_push;
+svgout id "HPK1_rect_bergen" attr "visibility" value if Pumpcellars_HeadPumpcellar1_Mode.store: "visible" else "hidden" end;
+
+svgin id "HPK1_knop_uit" event Pumpcellars_HeadPumpcellar1_Control_ButtonOff_u_push;
+svgout id "HPK1_rect_uit" attr "visibility" value if Pumpcellars_HeadPumpcellar1_Mode.off: "visible" else "hidden" end;
+
+
+// MiddlePumpcellar
+svgin id "MPK_knop_handmatig" event Pumpcellars_MiddlePumpcellar_Control_ButtonManual_u_push;
+svgout id "MPK_rect_hand" attr "visibility" value if Pumpcellars_MiddlePumpcellar_Control_Mode.manual: "visible" else "hidden" end;
+
+svgin id "MPK_knop_automatisch" event Pumpcellars_MiddlePumpcellar_Control_ButtonAuto_u_push;
+svgout id "MPK_rect_auto" attr "visibility" value if Pumpcellars_MiddlePumpcellar_Control_Mode.auto: "visible" else "hidden" end;
+
+svgin id "MPK_knop_leeghouden" event Pumpcellars_MiddlePumpcellar_Control_ButtonDrain_u_push;
+svgout id "MPK_rect_leeghouden" attr "visibility" value if Pumpcellars_MiddlePumpcellar_Mode.drain: "visible" else "hidden" end;
+
+svgin id "MPK_knop_bergen" event Pumpcellars_MiddlePumpcellar_Control_ButtonStore_u_push;
+svgout id "MPK_rect_bergen" attr "visibility" value if Pumpcellars_MiddlePumpcellar_Mode.store: "visible" else "hidden" end;
+
+svgin id "MPK_knop_uit" event Pumpcellars_MiddlePumpcellar_Control_ButtonOff_u_push;
+svgout id "MPK_rect_uit" attr "visibility" value if Pumpcellars_MiddlePumpcellar_Mode.off: "visible" else "hidden" end;
+
+
+// HeadPumpcellar 2
+svgin id "HPK2_knop_handmatig" event Pumpcellars_HeadPumpcellar2_Control_ButtonManual_u_push;
+svgout id "HPK2_rect_hand" attr "visibility" value if Pumpcellars_HeadPumpcellar2_Control_Mode.manual: "visible" else "hidden" end;
+
+svgin id "HPK2_knop_automatisch" event Pumpcellars_HeadPumpcellar2_Control_ButtonAuto_u_push;
+svgout id "HPK2_rect_auto" attr "visibility" value if Pumpcellars_HeadPumpcellar2_Control_Mode.auto: "visible" else "hidden" end;
+
+svgin id "HPK2_knop_leeghouden" event Pumpcellars_HeadPumpcellar2_Control_ButtonDrain_u_push;
+svgout id "HPK2_rect_leeghouden" attr "visibility" value if Pumpcellars_HeadPumpcellar2_Mode.drain: "visible" else "hidden" end;
+
+svgin id "HPK2_knop_bergen" event Pumpcellars_HeadPumpcellar2_Control_ButtonStore_u_push;
+svgout id "HPK2_rect_bergen" attr "visibility" value if Pumpcellars_HeadPumpcellar2_Mode.store: "visible" else "hidden" end;
+
+svgin id "HPK2_knop_uit" event Pumpcellars_HeadPumpcellar2_Control_ButtonOff_u_push;
+svgout id "HPK2_rect_uit" attr "visibility" value if Pumpcellars_HeadPumpcellar2_Mode.off: "visible" else "hidden" end;

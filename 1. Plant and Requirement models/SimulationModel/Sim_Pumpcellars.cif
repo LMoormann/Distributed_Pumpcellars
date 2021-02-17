@@ -1,0 +1,89 @@
+import "Definitions/Sim_Pumpcellar.cif", "Definitions/Sim_Inflow.cif", "Definitions/Sim_Outflow.cif", "Definitions/Sim_Rain.cif";
+import "../Supervisor.cif";
+
+group Sim_Pumpcellars:
+ 	svgfile "../Pumpcellars.svg";
+
+  Rain: Sim_Rain(
+    "knop_regen_plus",
+    "knop_regen_min",
+    "regen_stand");
+
+  InflowMiddlePumpcellar: Sim_InflowMiddlepumpcellar(Rain.Rainlevel.level, Rain.raining);
+
+  InflowHeadPumpcellar1: Sim_InflowHeadpumpcellar(
+    Rain.Rainlevel.level,
+    Rain.raining,
+    Pumpcellars_MiddlePumpcellar_Pump1.on,
+    Pumpcellars_MiddlePumpcellar_Pump2.on,
+    Pumpcellars_MiddlePumpcellar_PumpDirection.headPumpcellar1);
+
+  InflowHeadPumpcellar2: Sim_InflowHeadpumpcellar(
+    Rain.Rainlevel.level,
+    Rain.raining,
+    Pumpcellars_MiddlePumpcellar_Pump1.on,
+    Pumpcellars_MiddlePumpcellar_Pump2.on,
+    Pumpcellars_MiddlePumpcellar_PumpDirection.headPumpcellar2);
+
+ 	MiddlePumpcellar: Sim_PumpcellarDouble(
+    Pumpcellars_MiddlePumpcellar_Pump1.on,
+    Pumpcellars_MiddlePumpcellar_Pump2.on,
+    Pumpcellars_MiddlePumpcellar_PumpDirection.headPumpcellar1,
+    InflowMiddlePumpcellar.inflow,
+    Rain.raining,
+    InflowMiddlePumpcellar.volume,
+    InflowMiddlePumpcellar.volume_rain,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S1on,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S1off,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S2on,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S2off,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S3on,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S3off,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S4on,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S4off,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S5on,
+    Pumpcellars_MiddlePumpcellar_SensorTank_u_S5off,
+    "MPK_",
+    "MPKnaarHPK1_",
+    "MPKnaarHPK2_");
+
+  HeadPumpcellar1: Sim_PumpcellarSingle(
+    Pumpcellars_HeadPumpcellar1_Pump1.on,
+    Pumpcellars_HeadPumpcellar1_Pump2.on,
+    InflowHeadPumpcellar1.inflow,
+    Rain.raining,
+    InflowHeadPumpcellar1.volume,
+    InflowHeadPumpcellar1.volume_rain,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S1on,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S1off,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S2on,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S2off,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S3on,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S3off,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S4on,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S4off,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S5on,
+    Pumpcellars_HeadPumpcellar1_SensorTank_u_S5off,
+    "HPK1_",
+    "HPK1naarOudeMaas_");
+
+  HeadPumpcellar2: Sim_PumpcellarSingle(
+    Pumpcellars_HeadPumpcellar2_Pump1.on,
+    Pumpcellars_HeadPumpcellar2_Pump2.on,
+    InflowHeadPumpcellar2.inflow,
+    Rain.raining,
+    InflowHeadPumpcellar2.volume,
+    InflowHeadPumpcellar2.volume_rain,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S1on,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S1off,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S2on,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S2off,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S3on,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S3off,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S4on,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S4off,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S5on,
+    Pumpcellars_HeadPumpcellar2_SensorTank_u_S5off,
+    "HPK2_",
+    "HPK2naarOudeMaas_");
+end

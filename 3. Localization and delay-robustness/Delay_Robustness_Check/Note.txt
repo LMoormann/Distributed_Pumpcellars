@@ -1,0 +1,7 @@
+In total, a set of 66 event combinations is identified. If the original versions (i.e. not the observer events)
+of an event combination are observed and controlled by the same local supervisor, the event combination
+can be considered not delay-critical. This is the case, because communication delays do not occur within a
+local supervisor. Therefore, the order in which these events occur can never change due to communication
+delay. Moreover, as communication channels are considered as FIFO buffers, no other local supervisor
+can observe this event combination in a changed order. The relevant event combinations are removed and
+a set of 36 delay-critical event combinations remains.

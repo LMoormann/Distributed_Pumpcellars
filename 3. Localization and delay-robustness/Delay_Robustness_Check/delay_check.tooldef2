@@ -1,0 +1,71 @@
+from "lib:cif3" import *;
+
+// Input file
+string input_path1 = "../Loc1/loc1.cif";
+string input_path2 = "../Loc2/loc2.cif";
+string output_path1 = "loc1_adjusted.cif";
+string output_path2 = "loc2_adjusted.cif";
+string output_path3 = "delayedsup.cif";
+string channels = "Channels.cif";
+
+// Adjust PLC1
+cif3cif(input_path1,
+  "-o", output_path1,
+  "-t elim-comp-def-inst"
+  );
+
+cif3cif(output_path1,
+  "-o", output_path1,
+  "-t elim-groups"
+  );
+
+cif3cif(output_path1,
+  "-o", output_path1,
+  "-t lift-events"
+  );
+
+// Adjust PLC2
+cif3cif(input_path2,
+  "-o", output_path2,
+  "-t elim-comp-def-inst"
+  );
+
+cif3cif(output_path2,
+  "-o", output_path2,
+  "-t elim-groups"
+  );
+
+cif3cif(output_path2,
+  "-o", output_path2,
+  "-t lift-events"
+  );
+
+// Merge
+cif3merge(output_path1, output_path2, channels,
+	"-o", output_path3
+	);
+
+cif3cif(output_path3,
+  "-o", output_path3,
+  "-t elim-comp-def-inst"
+  );
+
+cif3cif(output_path3,
+  "-o", output_path3,
+  "-t elim-groups"
+  );
+
+cif3cif(output_path3,
+  "-o", output_path3,
+  "-t lift-events"
+  );
+
+cif3cif(output_path3,
+  "-o", output_path3,
+  "-t simplify-values"
+  );
+
+// Delay-robustness check
+cif3delaycheck(output_path3,
+	"-f", "delayed_events.txt"
+	);

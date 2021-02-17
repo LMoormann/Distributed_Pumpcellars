@@ -1,0 +1,35 @@
+controllable Pumpcellars_Traffictube1_Observer_c_emergency;
+controllable Pumpcellars_Traffictube1_Observer_c_recovery;
+controllable Pumpcellars_Traffictube1_Observer_c_operational;
+
+plant automaton Pumpcellars_Traffictube1_ModeTraffictube_Observer:
+  location operational:
+    initial;
+    marked;
+    edge Pumpcellars_Traffictube1_Observer_c_emergency goto emergency;
+    edge Pumpcellars_Traffictube1_Observer_c_recovery goto recovery;
+  location emergency:
+    edge Pumpcellars_Traffictube1_Observer_c_recovery goto recovery;
+    edge Pumpcellars_Traffictube1_Observer_c_operational goto operational;
+  location recovery:
+    edge Pumpcellars_Traffictube1_Observer_c_operational goto operational;
+    edge Pumpcellars_Traffictube1_Observer_c_emergency goto emergency;
+end
+
+controllable Pumpcellars_Traffictube2_Observer_c_emergency;
+controllable Pumpcellars_Traffictube2_Observer_c_recovery;
+controllable Pumpcellars_Traffictube2_Observer_c_operational;
+
+plant automaton Pumpcellars_Traffictube2_ModeTraffictube_Observer:
+  location operational:
+    initial;
+    marked;
+    edge Pumpcellars_Traffictube2_Observer_c_emergency goto emergency;
+    edge Pumpcellars_Traffictube2_Observer_c_recovery goto recovery;
+  location emergency:
+    edge Pumpcellars_Traffictube2_Observer_c_recovery goto recovery;
+    edge Pumpcellars_Traffictube2_Observer_c_operational goto operational;
+  location recovery:
+    edge Pumpcellars_Traffictube2_Observer_c_operational goto operational;
+    edge Pumpcellars_Traffictube2_Observer_c_emergency goto emergency;
+end
