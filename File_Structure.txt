@@ -1,4 +1,4 @@
-This repository contains the following models of the distributed pumpcellar system. Each folder contains a File_Structure.pdf file that explains the contents of that folder in more detail.
+This repository contains the following models of the distributed pump cellar system. Each folder contains a File_Structure.pdf file that explains the contents of that folder in more detail.
 
 1. Plant and requirement models
 Contains the discrete plant model and the requirements, the synthesized monolithic supervisor, the hybrid simulation model, and the Graphical User Interface model.
@@ -6,7 +6,7 @@ Contains the discrete plant model and the requirements, the synthesized monolith
 2. Multilevel synthesis
 Contains the discrete plant model and the requirements, and the synthesized multilevel supervisor.
 
-3. Localization and delay-robustness
+3. Localization and delay robustness
 Contains the localized supervisors Loc1 and Loc2, and the models for the delay robustness check.
 
 4. Controller checks
