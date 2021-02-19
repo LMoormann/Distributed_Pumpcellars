@@ -1,9 +1,9 @@
 As mentioned in Section VI of the paper, certain model changes were made after the controller checks for confluence, finite response, and nonblocking 
 under control. These changes are explained here.
 
-Initially the sensors of each pumpcellar are modeled as individual sensors with no physical relations. This model is changed to one sensor automaton
+Initially the sensors of each pump cellar are modeled as individual sensors with no physical relations. This model is changed to one sensor automaton
 for all sensors in a pump-cellar. The automaton is given in Fig. 22, the event and state names in this figure are abbreviated. In the initial model, 
 the assumption that, for example, sensor level 1 would never be off if sensor level 2 is on. In the adjusted model, this is incorporated.
 
-Several reuqirements are defined more strictly to prevent certain controllable event pairs from being enabled simultaniously, as this can results in 
+Several requirements are defined more strictly to prevent certain controllable event pairs from being enabled simultaneously, as this can results in 
 the model not being confluent. These requirements relate to turning the pumps on and off, and the switching of traffic tube modes.
